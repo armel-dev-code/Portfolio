@@ -12,6 +12,7 @@ out/
 # misc
 .DS_Store
 *.log
+*.tsbuildinfo
 
 # editor
 .idea/

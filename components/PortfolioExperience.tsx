@@ -7,6 +7,8 @@ import {
   ChevronRight,
   Code2,
   Github,
+  GraduationCap,
+  Languages as LanguagesIcon,
   Layers3,
   Linkedin,
   Mail,
@@ -39,6 +41,8 @@ import { useEffect, useRef, useState } from 'react';
 
 const cvUrl = '/cv-zan-armel-kessel-za-bi.pdf';
 const profilePhotoUrl = '/photo-armel.jpg';
+const githubUrl = 'https://github.com/armel-dev-code';
+const linkedinUrl = 'https://www.linkedin.com/in/armel-za-bi/';
 
 const skills = [
   {
@@ -122,11 +126,37 @@ const timeline = [
     points: ['Frontend React / Next.js', 'UX achat', 'Administration', 'Cypress / ESLint'],
   },
   {
+    role: 'Frontend Developer',
+    company: 'Avm-Integration',
+    period: 'Octobre 2024 - février 2025',
+    points: ['Interfaces React complexes', 'Temps réel et recherche filtrée', 'Principes SOLID', '.NET / MySQL'],
+  },
+  {
     role: 'Senior Frontend Developer',
     company: 'SAS DJUST Paris',
     period: 'Septembre 2021 - septembre 2024',
     points: ['Back-office React', 'Composants réutilisables', 'Performance UX', 'Mentoring'],
   },
+];
+
+const education = [
+  {
+    degree: 'Expert en ingénierie informatique logicielle',
+    school: 'Epitech',
+    period: 'Octobre 2016 - avril 2021',
+    text: 'Programme Grande École en 5 ans formant des ingénieurs informatique hautement qualifiés et polyvalents.',
+  },
+  {
+    degree: 'Baccalauréat Technologique',
+    school: 'Lycée Jean-Baptiste Poquelin',
+    period: '2014 - 2016',
+    text: '',
+  },
+];
+
+const languages = [
+  { name: 'Français', level: 5 },
+  { name: 'Anglais', level: 3.5 },
 ];
 
 const process = [
@@ -455,6 +485,7 @@ export default function PortfolioExperience() {
               { label: 'Stack', target: 'langages' },
               { label: 'Réalisations', target: 'projets' },
               { label: 'Parcours', target: 'experience' },
+              { label: 'Formations', target: 'formations' },
               { label: 'Contact', target: 'contact' },
             ].map((item) => (
               <a key={item.label} href={`#${item.target}`} className="rounded-full px-4 py-2 transition hover:bg-sky-50 hover:text-sky-700">
@@ -462,9 +493,29 @@ export default function PortfolioExperience() {
               </a>
             ))}
           </nav>
-          <a href="mailto:zaarmel@hotmail.fr" className="hidden rounded-full bg-emerald-500 px-5 py-3 text-sm font-black text-white shadow-lg shadow-emerald-500/20 transition hover:-translate-y-0.5 hover:shadow-emerald-500/30 sm:inline-flex">
-            Contact
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="hidden h-11 w-11 items-center justify-center rounded-full border border-sky-100 bg-white/80 text-slate-950 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-200 hover:text-emerald-700 sm:inline-flex"
+            >
+              <Github size={19} />
+            </a>
+            <a
+              href={linkedinUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="hidden h-11 w-11 items-center justify-center rounded-full border border-sky-100 bg-white/80 text-slate-950 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-200 hover:text-emerald-700 sm:inline-flex"
+            >
+              <Linkedin size={19} />
+            </a>
+            <a href="mailto:zaarmel@hotmail.fr" className="hidden rounded-full bg-emerald-500 px-5 py-3 text-sm font-black text-white shadow-lg shadow-emerald-500/20 transition hover:-translate-y-0.5 hover:shadow-emerald-500/30 sm:inline-flex">
+              Contact
+            </a>
+          </div>
         </div>
       </header>
 
@@ -504,9 +555,15 @@ export default function PortfolioExperience() {
 
         <div className="relative z-10 mx-auto grid min-h-[calc(100vh-7rem)] w-[min(1280px,100%)] items-center gap-10 lg:grid-cols-[minmax(0,1fr)_380px] xl:grid-cols-[minmax(0,1fr)_440px]">
           <motion.div initial={{ opacity: 0, y: 34, filter: 'blur(14px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }} className="max-w-4xl">
-            <motion.p initial={{ opacity: 0, x: -18 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.18 }} className="mb-5 inline-flex rounded-full border border-emerald-200 bg-white/80 px-4 py-2 text-sm font-black text-emerald-700 shadow-sm backdrop-blur-xl">
-              Lead Frontend React / Fullstack JavaScript
-            </motion.p>
+            <motion.div initial={{ opacity: 0, x: -18 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.18 }} className="mb-5 flex flex-wrap items-center gap-3">
+              <p className="inline-flex rounded-full border border-emerald-200 bg-white/80 px-4 py-2 text-sm font-black text-emerald-700 shadow-sm backdrop-blur-xl">
+                Lead Frontend React / Fullstack JavaScript
+              </p>
+              <p className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-500/90 px-4 py-2 text-sm font-black text-white shadow-sm backdrop-blur-xl">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-white" />
+                Disponible pour CDI & Freelance
+              </p>
+            </motion.div>
             <p className="mb-5 text-sm font-black uppercase tracking-[0.2em] text-white/72">{slide.label}</p>
             <h1 className="max-w-5xl text-5xl font-black leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-7xl">
               Je conçois des produits React utiles, élégants et pensés pour durer.
@@ -795,18 +852,88 @@ export default function PortfolioExperience() {
         </div>
       </MotionSection>
 
+      <MotionSection id="formations" className="mx-auto w-[min(1180px,calc(100%-28px))] py-24">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+          <div>
+            <p className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-emerald-700">Formations</p>
+            <h2 className="text-3xl font-black tracking-tight text-slate-950 md:text-4xl">Le socle qui a construit ma manière d’ingénieur.</h2>
+            <div className="mt-8 grid gap-4">
+              {education.map((item) => (
+                <GlowCard key={item.degree} className="p-6">
+                  <div className="flex items-start gap-4">
+                    <GraduationCap className="mt-1 shrink-0 text-emerald-500" size={24} />
+                    <div>
+                      <p className="text-sm font-black text-sky-700">{item.period}</p>
+                      <h3 className="mt-1 text-lg font-black text-slate-950">{item.degree}</h3>
+                      <p className="mt-1 text-sm font-bold text-slate-500">{item.school}</p>
+                      {item.text ? <p className="mt-3 leading-7 text-slate-600">{item.text}</p> : null}
+                    </div>
+                  </div>
+                </GlowCard>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-emerald-700">Langues</p>
+            <h2 className="text-3xl font-black tracking-tight text-slate-950 md:text-4xl">Français natif, anglais professionnel.</h2>
+            <div className="mt-8 grid gap-4">
+              {languages.map((lang) => (
+                <GlowCard key={lang.name} className="p-6">
+                  <div className="flex items-center gap-4">
+                    <LanguagesIcon className="shrink-0 text-emerald-500" size={22} />
+                    <div className="flex-1">
+                      <p className="text-base font-black text-slate-950">{lang.name}</p>
+                      <div className="mt-2 flex gap-1">
+                        {Array.from({ length: 5 }).map((_, index) => (
+                          <span
+                            key={index}
+                            className={`h-2 w-6 rounded-full ${index < Math.round(lang.level) ? 'bg-emerald-500' : 'bg-sky-100'}`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </GlowCard>
+              ))}
+            </div>
+          </div>
+        </div>
+      </MotionSection>
+
       <MotionSection id="contact" className="mx-auto w-[min(1180px,calc(100%-28px))] py-24">
         <div className="grid gap-8 rounded-[2.5rem] border border-sky-100 bg-white/86 p-6 shadow-[0_28px_80px_rgba(14,143,208,0.12)] backdrop-blur-xl md:grid-cols-[0.9fr_1.1fr] md:p-10">
           <div>
             <p className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-emerald-700">Contact</p>
             <h2 className="text-4xl font-black tracking-tight text-slate-950 md:text-5xl">Parlons de votre prochain produit React et fullstack.</h2>
             <p className="mt-5 leading-8 text-slate-600">
-              Je suis disponible pour une mission frontend senior, une plateforme SaaS, un back-office métier, une marketplace mobile ou une refonte React / Next.js.
+              Je suis disponible dès maintenant, en CDI comme en freelance, pour une mission frontend senior, une plateforme SaaS, un back-office métier, une marketplace mobile ou une refonte React / Next.js.
             </p>
             <div className="mt-8 grid gap-3 text-sm font-bold text-slate-600">
+              <span className="flex items-center gap-3"><span className="h-2.5 w-2.5 animate-pulse rounded-full bg-emerald-500" /> Disponible pour CDI & Freelance</span>
               <a className="flex items-center gap-3" href="mailto:zaarmel@hotmail.fr"><Mail className="text-emerald-500" size={18} /> zaarmel@hotmail.fr</a>
               <a className="flex items-center gap-3" href="tel:+33787561692"><Phone className="text-emerald-500" size={18} /> 07 87 56 16 92</a>
               <span className="flex items-center gap-3"><MapPin className="text-emerald-500" size={18} /> Noisy-le-Grand, France</span>
+            </div>
+            <div className="mt-6 flex gap-3">
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-sky-100 bg-white text-slate-950 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-200 hover:text-emerald-700"
+              >
+                <Github size={19} />
+              </a>
+              <a
+                href={linkedinUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-sky-100 bg-white text-slate-950 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-200 hover:text-emerald-700"
+              >
+                <Linkedin size={19} />
+              </a>
             </div>
           </div>
           <form className="grid gap-4">
