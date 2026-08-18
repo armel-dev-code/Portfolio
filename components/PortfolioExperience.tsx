@@ -905,9 +905,9 @@ export default function PortfolioExperience() {
         <div className="grid gap-8 rounded-[2.5rem] border border-sky-100 bg-white/86 p-6 shadow-[0_28px_80px_rgba(14,143,208,0.12)] backdrop-blur-xl md:grid-cols-[0.9fr_1.1fr] md:p-10">
           <div>
             <p className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-emerald-700">Contact</p>
-            <h2 className="text-4xl font-black tracking-tight text-slate-950 md:text-5xl">Parlons de votre prochain produit React et fullstack.</h2>
+            <h2 className="text-4xl font-black tracking-tight text-slate-950 md:text-5xl">Parlons de votre prochain projet.</h2>
             <p className="mt-5 leading-8 text-slate-600">
-              Je suis disponible dès maintenant, en CDI comme en freelance, pour une mission frontend senior, une plateforme SaaS, un back-office métier, une marketplace mobile ou une refonte React / Next.js.
+              Je suis disponible dès maintenant, en CDI comme en freelance, et ouvert à tout type de projet : mission frontend senior, plateforme SaaS, back-office métier, marketplace mobile, refonte React / Next.js ou tout autre besoin produit.
             </p>
             <div className="mt-8 grid gap-3 text-sm font-bold text-slate-600">
               <span className="flex items-center gap-3"><span className="h-2.5 w-2.5 animate-pulse rounded-full bg-emerald-500" /> Disponible pour CDI & Freelance</span>
